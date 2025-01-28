@@ -10,6 +10,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       <a routerLink="/">Home</a>
     </nav>
 
+    <h1 class="text-3xl font-bold underline bg-red-500">
+      Hello Tailwind V4!
+    </h1>    
+
     <router-outlet />
   `,
   styles: `
@@ -26,4 +30,4 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     }
   `,
 })
-export class AppComponent {}
+export class AppComponent { }

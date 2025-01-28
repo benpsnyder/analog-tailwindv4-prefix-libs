@@ -2,6 +2,7 @@
 
 import { defineConfig } from 'vite';
 import analog from '@analogjs/platform';
+import tailwindcss from '@tailwindcss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -20,6 +21,7 @@ export default defineConfig(({ mode }) => ({
         routes: ['/blog', '/blog/2022-12-27-my-first-post'],
       },
     }),
+    tailwindcss()
   ],
   test: {
     globals: true,
