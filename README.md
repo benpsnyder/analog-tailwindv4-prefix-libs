@@ -1,26 +1,15 @@
-# analog-tailwindv4
+# analog-tailwindv4 (with Nx, and with a Component from a Library)
 
-This project was generated with [Analog](https://analogjs.org), the fullstack meta-framework for Angular.
+Starting point from https://github.com/brandonroberts/analog-tailwindv4
 
 ## Setup
 
-Run `npm install` to install the application dependencies.
+Run `pnpm install` to install the application dependencies.
 
 ## Development
 
-Run `npm start` for a dev server. Navigate to `http://localhost:5173/`. The application automatically reloads if you change any of the source files.
+Run `nx run portal:serve` for a dev server. Navigate to `http://localhost:4200/`. The application automatically reloads if you change any of the source files.
 
 ## Build
 
-Run `npm run build` to build the client/server project. The client build artifacts are located in the `dist/analog/public` directory. The server for the API build artifacts are located in the `dist/analog/server` directory.
-
-## Test
-
-Run `npm run test` to run unit tests with [Vitest](https://vitest.dev).
-
-## Community
-
-- Visit and Star the [GitHub Repo](https://github.com/analogjs/analog)
-- Join the [Discord](https://chat.analogjs.org)
-- Follow us on [Twitter](https://twitter.com/analogjs)
-- Become a [Sponsor](https://github.com/sponsors/brandonroberts)
+Run `nx run portal:build` to build the client/server project.

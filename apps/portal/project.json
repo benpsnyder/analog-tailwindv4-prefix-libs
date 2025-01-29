@@ -1,0 +1,62 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "implicitDependencies": [],
+  "name": "portal",
+  "projectType": "application",
+  "sourceRoot": "apps/portal/src",
+  "tags": ["scope:portal"],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "sourcemap": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "dependsOn": ["^build"],
+      "executor": "@analogjs/platform:vite",
+      "options": {
+        "configFile": "apps/portal/vite.config.mts",
+        "main": "apps/portal/src/main.ts",
+        "outputPath": "dist/apps/portal/client",
+        "tsConfig": "apps/portal/tsconfig.app.json"
+      },
+      "outputs": ["{options.outputPath}", "{workspaceRoot}/dist/apps/portal/.nitro", "{workspaceRoot}/dist/apps/portal/ssr", "{workspaceRoot}/dist/apps/portal/analog"]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "portal:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "portal:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "portal:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@analogjs/platform:vite-dev-server",
+      "options": {
+        "buildTarget": "portal:build",
+        "port": 4200
+      }
+    },
+    "test": {
+      "executor": "@analogjs/platform:vitest",
+      "outputs": ["{projectRoot}/coverage"]
+    }
+  }
+}

@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import {MylibComponent } from '@libs/mylib';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet, MylibComponent],
   template: `
     <nav>
       <a routerLink="/">Home</a>
     </nav>
 
-    <h1 class="text-3xl font-bold underline bg-red-500">
+    <h1 class="demo:text-3xl demo:font-bold demo:underline demo:bg-red-500">
       Hello Tailwind V4!
-    </h1>    
+    </h1>
+
+    <mylib-component/>
 
     <router-outlet />
   `,
@@ -30,4 +32,4 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     }
   `,
 })
-export class AppComponent { }
+export class AppComponent {}
